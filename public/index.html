@@ -2,11 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
+    <title>ingresar md</title>
+    <script src="interfaz.js"></script>
 </head>
 <body>
-    <h1>Hola mundo</h1>
+    <div id="caja1">
+        <h1>Escribir texto</h1>
+        <button id="mostrarlista">Mostrar archivos</button>
+        <button id="crearNuevo">Crear Nuevo</button>
+        <form id="markupForm" style="display: none;">
+            <div id="Archivos">
+                <label for="titulo">Titulo:</label>
+                <input type="text" id="texto" name="texto" required><br>
+                <label for="texto">Texto:</label><br>
+                <escribir id="texto" rows="10" cols="70"></escribir><br>
+                <input type="submit" value="guardar">
+            </div>
+        </form>
+      
+        <h2>Texto Convertido:</h2>
+        <div id="convertido"></div>
+    </div>
 </body>
 </html>
