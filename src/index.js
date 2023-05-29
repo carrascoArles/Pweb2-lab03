@@ -18,3 +18,16 @@ app.get('/', (req, res) => {
 app.get('/archivos', (req, res) => {
     res.send("Archivos")
 })
+
+app.get('/archivos/:id', (req, res) => {
+    res.send('Archivo ' + req.params.id);
+})
+
+app.get('/crear', (req, res) => {
+    res.send('Crear');
+})
+
+// Route NotFound
+app.use((req, res) => {
+    res.status(404).send('No se encontró la Página')
+})
