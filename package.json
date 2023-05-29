@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/carrascoArles/Pweb2-lab03#readme",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "markdown-it": "^13.0.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.22"
