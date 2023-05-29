@@ -6,7 +6,7 @@ const markdownIt = require('markdown-it');
 const app = express();
 const md = new markdownIt()
 
-app.use(express.static("../public"));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(express.json());
 
 app.listen(3000, () => {
