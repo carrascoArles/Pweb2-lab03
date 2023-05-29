@@ -18,6 +18,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
+
+// Mostrar la lista de archivos markdown que hay en la carpeta
 app.get("/archivos", (req, res) => {
   fs.readdir(__dirname + "/markdown", (err, files) => {
     if (err) {
@@ -33,7 +35,8 @@ app.get("/archivos", (req, res) => {
   });
 });
 
-app.get("/archivos/:name", (req, res) => {
+// Visualizar archivo Markdown en HTML
+app.get("/markdown/:name", (req, res) => {
     const name = req.params.name
     const filePath = path.join(__dirname + '/markdown/', name)
     
@@ -47,6 +50,7 @@ app.get("/archivos/:name", (req, res) => {
         res.send(html)
     })
 })
+
 
 app.get("/crear", (req, res) => {
   res.send("Crear");

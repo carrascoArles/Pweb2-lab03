@@ -1,27 +1,31 @@
-document.getElementById("mostrarlista").addEventListener("click", function () {
-  var xhr = new XMLHttpRequest();
+document.getElementById("show-files").addEventListener("click", function () {
+  const xhr = new XMLHttpRequest(); // Peticion AJAX
   xhr.open("GET", "/archivos", true);
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4) {
-      if (xhr.status === 200) {
-        // La respuesta ha sido recibida correctamente
-        var response = JSON.parse(xhr.responseText);
-        // Mostrar la respuesta en algún elemento en la página
-        var convertidoDiv = document.getElementById("convertido");
-        convertidoDiv.innerHTML = ""; // Limpiar contenido anterior
-        for (var i = 0; i < response.length; i++) {
-          var fileName = response[i];
-          var fileLink = document.createElement("a");
-          fileLink.href = "/markdown/" + fileName; // Ruta a los archivos markdown
-          fileLink.textContent = fileName;
-          convertidoDiv.appendChild(fileLink);
-          convertidoDiv.appendChild(document.createElement("br"));
-        }
-      } else {
-        // Ocurrió un error al realizar la petición
-        console.error(xhr.status);
+
+  xhr.onreadystatechange = (err) => {
+    if (xhr.status === 200) {
+      const response = JSON.parse(xhr.responseText);
+      const boxContainer = document.getElementById("box-container");
+
+      boxContainer.innerHTML = "";
+
+      for (var i = 0; i < response.length; i++) {
+        const fileName = response[i];
+        const link = document.createElement("a");
+
+        link.href = "/markdown/" + fileName; // Ruta a los archivos markdown
+        link.textContent = fileName;
+
+        boxContainer.appendChild(link);
+        boxContainer.appendChild(document.createElement("br"));
       }
+    } else {
+      console.error(err);
     }
   };
+
   xhr.send();
 });
+
+
+
