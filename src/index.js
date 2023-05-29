@@ -53,7 +53,7 @@ app.get("/markdown/:name", (req, res) => {
 app.post("/crear", (req, res) => {
   const { titulo, texto } = req.body;
 
-  // Verificar si la carpeta "markdown" existe, si no, crearla
+  // Verificar si la carpeta markdown existe, si no, crearla
   const directorioMarkdown = path.join(__dirname, "markdown");
   if (!fs.existsSync(directorioMarkdown)) {
     fs.mkdirSync(directorioMarkdown);

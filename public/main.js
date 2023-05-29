@@ -43,13 +43,12 @@ document
     const texto = document.getElementById("texto").value;
 
     const xhr = new XMLHttpRequest()
-    xhr.open("POST", "/archivos", true)
+    xhr.open("POST", "/crear", true)
     xhr.setRequestHeader("Content-Type", "application/json")
 
     xhr.onreadystatechange = function () {
       if (xhr.status === 200) {
         console.log("Archivo creado y guardado exitosamente")
-        // Realizar cualquier acción adicional después de guardar el archivo
       } else {
         console.error("Error al crear y guardar el archivo:", xhr.status)
       }
