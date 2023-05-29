@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ingresar md</title>
-</head>
-<body>
-    <div id="caja1">
-        <h1>Escribir texto</h1>
-        <button id="mostrarlista">Mostrar archivos</button>
-        <button id="crearNuevo">Crear Nuevo</button>
-        <form id="markupForm" style="display: none;">
-            <div id="Archivos">
-                <label for="titulo">Titulo:</label>
-                <input type="text" id="texto" name="texto" required><br>
-                <label for="texto">Texto:</label><br>
-                <escribir id="texto" rows="10" cols="70"></escribir><br>
-                <input type="submit" value="guardar">
-            </div>
-        </form>
-      
-        <h2>Lista de archivos:</h2>
-        <div id="convertido"></div>
+  </head>
+  <body>
+    <div id="option-container">
+      <h1>Visualizar y crear archivos Markdown</h1>
 
+      <button id="show-files">Mostrar archivos</button>
+      <button id="crate-new">Crear Nuevo</button>
+
+      <form id="Markdown-form" style="display: none">
+        <label for="titulo">Título del documento Markdown:</label><br />
+        <input type="text" id="titulo" name="titulo" required placeholder="Escribe aquí el título" /><br />
+
+        <label for="texto">Texto:</label><br />
+        <textarea id="texto" name="texto" rows="10" cols="70" placeholder="Escribe el archivo en Markdown"></textarea><br />
+
+        <input type="submit" value="Crear y guardar" />
+      </form>
+
+      <div id="box-container"></div>
     </div>
 
     <script src="./main.js"></script>
-</body>
+  </body>
 </html>
