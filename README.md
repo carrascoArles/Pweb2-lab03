@@ -91,7 +91,7 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
 
 - ¿Entiende la expresión regular en el código y se da cuenta de para qué es útil?
 
-    
+    Si, se especifico reemplazar los saltos de linea (\n) por el tag <br>, el cual funciona de igual manera para html.
 
 - Note que la respuesta del servidor está en formato JSON, ¿Habrá alguna forma de verla directamente?
 
