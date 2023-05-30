@@ -47,18 +47,17 @@ h1{
   }
   #crate-new {
     display: flex;
-    justify-content:center;
-    text-align: center;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  
-    align-items: center;
-    font-size: 25px;
-    border-radius:35px;
+  justify-content:center;
+  text-align: center;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #555;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s;
+  font-size: 25px;
+  border-radius:35px;
   
   }
   input[type="submit"] {
