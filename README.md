@@ -71,61 +71,61 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
     
     **- Resolucion:**
     **  index.js**
-    - ![img](./img/img1.png)
-    En estas líneas se importan las dependencias necesarias, como express, path, fs (sistema de archivos) y markdown-it. Luego se crea una instancia de la aplicación Express y una instancia de markdownIt para convertir los archivos Markdown a HTML.
+    ![img](./img/img1.png)
+    - En estas líneas se importan las dependencias necesarias, como express, path, fs (sistema de archivos) y markdown-it. Luego se crea una instancia de la aplicación Express y una instancia de markdownIt para convertir los archivos Markdown a HTML.
 
-    - ![img](./img/img2.png)
-    Aquí se configuran los middleware de Express. express.static se utiliza para servir archivos estáticos desde la carpeta public, y express.json se utiliza para analizar los datos JSON de las solicitudes.
+    ![img](./img/img2.png)
+    - Aquí se configuran los middleware de Express. express.static se utiliza para servir archivos estáticos desde la carpeta public, y express.json se utiliza para analizar los datos JSON de las solicitudes.
 
-    - ![img](./img/img3.png)
-    Esta línea inicia el servidor y lo hace escuchar en el puerto 3000. Al iniciar el servidor, se muestra el mensaje "Servidor escuchando en el puerto 3000" en la consola.
+    ![img](./img/img3.png)
+    - Esta línea inicia el servidor y lo hace escuchar en el puerto 3000. Al iniciar el servidor, se muestra el mensaje "Servidor escuchando en el puerto 3000" en la consola.
 
-    - ![img](./img/img4.png)
-    Se define la primera ruta GET para el envío de "index.html".
+    ![img](./img/img4.png)
+    - Se define la primera ruta GET para el envío de "index.html".
 
-    - ![img](./img/img5.png)
-    Esta ruta devuelve la lista de archivos Markdown presentes en la carpeta /markdown. Utiliza el método readdir del módulo fs para leer el contenido de la carpeta. Luego, se filtran los archivos por extensión .md y se envía la lista en formato JSON como respuesta.
+    ![img](./img/img5.png)
+    - Esta ruta devuelve la lista de archivos Markdown presentes en la carpeta /markdown. Utiliza el método readdir del módulo fs para leer el contenido de la carpeta. Luego, se filtran los archivos por extensión .md y se envía la lista en formato JSON como respuesta.
     
-    - ![img](./img/img6.png)
-    Esta ruta se encarga de convertir un archivo Markdown en HTML y enviarlo como respuesta. El nombre del archivo se obtiene de los parámetros de la URL. Se utiliza el método readFile del módulo fs para leer el contenido del archivo. Luego, se utiliza el objeto markdownIt para convertir el contenido a HTML y se envía como respuesta.
+    ![img](./img/img6.png)
+    - Esta ruta se encarga de convertir un archivo Markdown en HTML y enviarlo como respuesta. El nombre del archivo se obtiene de los parámetros de la URL. Se utiliza el método readFile del módulo fs para leer el contenido del archivo. Luego, se utiliza el objeto markdownIt para convertir el contenido a HTML y se envía como respuesta.
     
-    - ![img](./img/img7.png)
-    Esta ruta maneja una solicitud POST para crear un nuevo archivo Markdown. Se obtienen los datos del título y el texto del cuerpo de la solicitud. Luego, se verifica si la carpeta /markdown existe, y si no, se crea utilizando fs.mkdirSync. A continuación, se crea la ruta del archivo con el título proporcionado. Si el archivo ya existe, se devuelve una respuesta JSON indicando que ya existe. En caso contrario, se utiliza el método writeFile de fs para guardar el archivo con el contenido proporcionado y se envía una respuesta de éxito.
+    ![img](./img/img7.png)
+    - Esta ruta maneja una solicitud POST para crear un nuevo archivo Markdown. Se obtienen los datos del título y el texto del cuerpo de la solicitud. Luego, se verifica si la carpeta /markdown existe, y si no, se crea utilizando fs.mkdirSync. A continuación, se crea la ruta del archivo con el título proporcionado. Si el archivo ya existe, se devuelve una respuesta JSON indicando que ya existe. En caso contrario, se utiliza el método writeFile de fs para guardar el archivo con el contenido proporcionado y se envía una respuesta de éxito.
 
-    - ![img](./img/img8.png)
-    Esta ruta maneja una solicitud PUT para reescribir un archivo Markdown existente. Se obtienen los datos del título y el texto del cuerpo de la solicitud. Luego, se construye la ruta del archivo utilizando el título. Si el archivo no existe, se devuelve una respuesta JSON con un error. En caso contrario, se utiliza el método writeFile de fs para reescribir el archivo con el nuevo contenido y se envía una respuesta de éxito.
+    ![img](./img/img8.png)
+    - Esta ruta maneja una solicitud PUT para reescribir un archivo Markdown existente. Se obtienen los datos del título y el texto del cuerpo de la solicitud. Luego, se construye la ruta del archivo utilizando el título. Si el archivo no existe, se devuelve una respuesta JSON con un error. En caso contrario, se utiliza el método writeFile de fs para reescribir el archivo con el nuevo contenido y se envía una respuesta de éxito.
 
-    - ![img](./img/img9.png)
-    Se devuelve una respuesta con estado 404 y el mensaje "No se encontró la Página", si no se encuentra la ruta correcta.
+    ![img](./img/img9.png)
+    - Se devuelve una respuesta con estado 404 y el mensaje "No se encontró la Página", si no se encuentra la ruta correcta.
 
 
     **  main.js**
-    - ![img](./img/img10.png)
-    Esta parte del código se encarga de mostrar la lista de archivos cuando se hace clic en un elemento específico. Al hacer clic en el elemento con el ID "show-files", se realiza una petición AJAX de tipo GET a la ruta "/archivos" del servidor. Una vez que se recibe la respuesta, se verifica si el estado de la respuesta es exitoso (código 200) y se obtiene el contenido de la respuesta como un objeto JavaScript mediante JSON.parse(). Luego, se obtiene el contenedor donde se mostrará la lista de archivos y se actualiza su contenido. Se crea un enlace para cada archivo en la respuesta y se le asigna la ruta hacia el archivo específico. Mostrando el nombre de cada archivo .md.
+    ![img](./img/img10.png)
+    - Esta parte del código se encarga de mostrar la lista de archivos cuando se hace clic en un elemento específico. Al hacer clic en el elemento con el ID "show-files", se realiza una petición AJAX de tipo GET a la ruta "/archivos" del servidor. Una vez que se recibe la respuesta, se verifica si el estado de la respuesta es exitoso (código 200) y se obtiene el contenido de la respuesta como un objeto JavaScript mediante JSON.parse(). Luego, se obtiene el contenedor donde se mostrará la lista de archivos y se actualiza su contenido. Se crea un enlace para cada archivo en la respuesta y se le asigna la ruta hacia el archivo específico. Mostrando el nombre de cada archivo .md.
 
-    - ![img](./img/img11.png)
-    Esta parte del código se encarga de mostrar el formulario y ocultar la lista de archivos cuando se hace clic en un elemento específico. Al hacer clic en el elemento con el ID "create-new", se muestra el formulario cambiando la propiedad de estilo display a "block", lo que lo hace visible. Además, se vacía el contenido del contenedor con ID "box-container" estableciendo su propiedad innerHTML a una cadena vacía.
+    ![img](./img/img11.png)
+    - Esta parte del código se encarga de mostrar el formulario y ocultar la lista de archivos cuando se hace clic en un elemento específico. Al hacer clic en el elemento con el ID "create-new", se muestra el formulario cambiando la propiedad de estilo display a "block", lo que lo hace visible. Además, se vacía el contenido del contenedor con ID "box-container" estableciendo su propiedad innerHTML a una cadena vacía.
 
-    - ![img](./img/img12.png)
-    En esta parte del código se maneja el evento de envío del formulario para crear y guardar un archivo Markdown. Al enviar el formulario, se evita el comportamiento por defecto mediante event.preventDefault(). Luego, se obtienen los valores de los campos del formulario (título y texto) usando getElementById().value. A continuación, se crea una instancia de XMLHttpRequest() para realizar una petición AJAX de tipo POST a la ruta "/crear" del servidor. Se configuran las cabeceras de la petición estableciendo el tipo de contenido como JSON mediante setRequestHeader(). Luego, se maneja el evento onreadystatechange para verificar el estado de la petición. Si el estado de la respuesta es XMLHttpRequest.DONE y el estado HTTP es exitoso (código 200), se analiza la respuesta como un objeto JSON usando JSON.parse(). Si en la respuesta se confirma que el documento ya existe, se muestra un cuadro de diálogo de confirmación al usuario. Dependiendo de la respuesta del usuario, se llama a la función reescribirArchivoMarkdown() para reescribir el archivo o se muestra un mensaje en la consola de que se canceló la creación y guardado del archivo. Si la respuesta indica que el archivo se creó y guardó exitosamente, se muestra un mensaje de alerta al usuario, se limpian los campos del formulario y se asigna un valor vacío a ellos.
+    ![img](./img/img12.png)
+    - En esta parte del código se maneja el evento de envío del formulario para crear y guardar un archivo Markdown. Al enviar el formulario, se evita el comportamiento por defecto mediante event.preventDefault(). Luego, se obtienen los valores de los campos del formulario (título y texto) usando getElementById().value. A continuación, se crea una instancia de XMLHttpRequest() para realizar una petición AJAX de tipo POST a la ruta "/crear" del servidor. Se configuran las cabeceras de la petición estableciendo el tipo de contenido como JSON mediante setRequestHeader(). Luego, se maneja el evento onreadystatechange para verificar el estado de la petición. Si el estado de la respuesta es XMLHttpRequest.DONE y el estado HTTP es exitoso (código 200), se analiza la respuesta como un objeto JSON usando JSON.parse(). Si en la respuesta se confirma que el documento ya existe, se muestra un cuadro de diálogo de confirmación al usuario. Dependiendo de la respuesta del usuario, se llama a la función reescribirArchivoMarkdown() para reescribir el archivo o se muestra un mensaje en la consola de que se canceló la creación y guardado del archivo. Si la respuesta indica que el archivo se creó y guardó exitosamente, se muestra un mensaje de alerta al usuario, se limpian los campos del formulario y se asigna un valor vacío a ellos.
 
-    - ![img](./img/img13.png)
-    Esta es la función reescribirArchivoMarkdown() que se llama si el usuario acepta reescribir un archivo con el mismo título. Se crea una instancia de XMLHttpRequest() para realizar una petición AJAX de tipo PUT a la ruta "/crear" del servidor. Se configuran las cabeceras de la petición estableciendo el tipo de contenido como JSON. Luego, se maneja el evento onreadystatechange para verificar el estado de la petición. Si el estado de la respuesta es XMLHttpRequest.DONE y el estado HTTP es exitoso (código 200), se muestra un mensaje en la consola y una alerta al usuario indicando que el archivo se reescribió exitosamente. También se limpian los campos del formulario asignándoles un valor vacío. Si la petición no es exitosa, se muestra un mensaje de error en la consola.
+    ![img](./img/img13.png)
+    - Esta es la función reescribirArchivoMarkdown() que se llama si el usuario acepta reescribir un archivo con el mismo título. Se crea una instancia de XMLHttpRequest() para realizar una petición AJAX de tipo PUT a la ruta "/crear" del servidor. Se configuran las cabeceras de la petición estableciendo el tipo de contenido como JSON. Luego, se maneja el evento onreadystatechange para verificar el estado de la petición. Si el estado de la respuesta es XMLHttpRequest.DONE y el estado HTTP es exitoso (código 200), se muestra un mensaje en la consola y una alerta al usuario indicando que el archivo se reescribió exitosamente. También se limpian los campos del formulario asignándoles un valor vacío. Si la petición no es exitosa, se muestra un mensaje de error en la consola.
     
 
     **- Ejecucion:**
 
-    - ![img](./img/imgEje1.png)
-    Pagina inicial.
+    ![img](./img/imgEje1.png)
+    - Pagina inicial.
 
-    - ![img](./img/imgCrearArchivo.png)
-    Creación de archivos .md.
+    ![img](./img/imgCrearArchivo.png)
+    - Creación de archivos .md.
 
-    - ![img](./img/imgListArchivos.png)
-    Desplegamiento de listas de archivos .md creados y almacenados.
+    ![img](./img/imgListArchivos.png)
+    - Desplegamiento de listas de archivos .md creados y almacenados.
 
-    - ![img](./img/imgMuestraArchivo.png)
-    Muestra de un archivo ya creado.
+    ![img](./img/imgMuestraArchivo.png)
+    - Muestra de un archivo ya creado.
 
 
 
