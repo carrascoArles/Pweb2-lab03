@@ -69,8 +69,10 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
 
 - Si los enlaces proporcionado en esta guía no le son suficientes, puede revisar códigos en Internet que le ayuden con cosas como ejemplos: listar un directorio en NodeJS; pero deberá incluir los enlaces correspondientes en sus archivos como comentarios y sólo podrá usar código de stackoverflow, incluir código de cualquier otra fuente está prohibido y se considerará actitud deshonesta.
     
-    **- Resolucion:**
-    **- index.js:**
+    **- Resolucion:**  
+    
+    **- index.js:**  
+    
     ![img](./img/img1.png)
     - En estas líneas se importan las dependencias necesarias, como express, path, fs (sistema de archivos) y markdown-it. Luego se crea una instancia de la aplicación Express y una instancia de markdownIt para convertir los archivos Markdown a HTML.
 
