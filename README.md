@@ -83,8 +83,7 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
 ## CUESTIONARIO
 - En el Ejemplo "Hola Mundo" con NodeJS. ¿Qué pasó con la línea: "Content type ….."?
     
-    
-    
+    No se utilizó, lo que cambia el comportamiento del código por no especificar al cliente el tipo de contenido a utilizar.
     
 - En los ejercicios. ¿En qué lugar debería estar el archivo poema.txt?
 
