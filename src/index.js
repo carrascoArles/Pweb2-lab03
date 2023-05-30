@@ -34,11 +34,12 @@ app.get("/archivos", (req, res) => {
   });
 });
 
-// Visualizar archivo Markdown en HTML
-app.get("/markdown/:name", (req, res) => {
+// Convertir y visualizar un archivo Markdown en HTML
+app.get("/archivos/:name", (req, res) => {
   const name = req.params.name;
-  const filePath = path.join(__dirname + "/markdown/", name);
+  const filePath = path.join(__dirname + "/markdown/" + name);
 
+  // Leemos el archivo, si hay un error lo lanzamos, si no, convertimos y mostramos
   fs.readFile(filePath, "utf-8", (err, data) => {
     if (err) {
       console.error(err);
@@ -50,25 +51,26 @@ app.get("/markdown/:name", (req, res) => {
   });
 });
 
+// Creamos un archivo markdown y lo guardamos
 app.post("/crear", (req, res) => {
   const { titulo, texto } = req.body;
 
-  // Verificar si la carpeta markdown existe, si no, crearla
-  const directorioMarkdown = path.join(__dirname, "markdown");
-  if (!fs.existsSync(directorioMarkdown)) {
-    fs.mkdirSync(directorioMarkdown);
+  // Verificamos si la carpeta markdown existe, si no, crearla
+  const markdownPath = path.join(__dirname, "markdown");
+  if (!fs.existsSync(markdownPath)) {
+    fs.mkdirSync(markdownPath);
   }
 
-  const nombreArchivo = `${titulo}.md`;
-  const rutaArchivo = path.join(directorioMarkdown, nombreArchivo);
+  const titleFile = `${titulo}.md`;
+  const filePath = path.join(markdownPath, titleFile);
 
-  // Verificar si el archivo ya existe
-  if (fs.existsSync(rutaArchivo)) {
+  // Verificamos si el archivo ya existe y retornamos un json con true para que el cliente pueda confirmar
+  if (fs.existsSync(filePath)) {
     return res.status(200).json({ confirmar: true });
   }
 
-  // Guardar el contenido del archivo Markdown
-  fs.writeFile(rutaArchivo, texto, (err) => {
+  // Guardamos archivo Markdown, si hay un error lo lanzamos
+  fs.writeFile(filePath, texto, (err) => {
     if (err) {
       console.error(err);
       return res.status(500).json({ error: "Error al guardar el archivo" });
@@ -76,6 +78,30 @@ app.post("/crear", (req, res) => {
 
     console.log("Archivo Markdown guardado exitosamente");
     res.status(200).json({ message: "Archivo Markdown creado y guardado" });
+  });
+});
+
+// Reescribimos un archivo markdown
+app.put("/crear", (req, res) => {
+  const { titulo, texto } = req.body;
+
+  const markdownPath = path.join(__dirname, "markdown");
+  const filePath = path.join(markdownPath, `${titulo}.md`);
+
+  // Verificamos si el archivo existe antes de reescribirlo
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ error: "El archivo no existe" });
+  }
+
+  // Reescribimos el archivo Markdown
+  fs.writeFile(filePath, texto, (err) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).json({ error: "Error al reescribir el archivo" });
+    }
+
+    console.log("Archivo Markdown reescrito exitosamente");
+    res.status(200).json({ message: "Archivo Markdown reescrito" });
   });
 });
 
