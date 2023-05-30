@@ -18,10 +18,13 @@ document.getElementById("show-files").addEventListener("click", () => {
           const link = document.createElement("a");
 
           link.href = "/archivos/" + fileName; // Ruta a los archivos especificos
-          link.textContent = "* " + fileName;
+          link.textContent = fileName;
 
           boxContainer.appendChild(link);
           boxContainer.appendChild(document.createElement("br"));
+
+          boxContainer.style.border = "1px solid #ccc";
+          boxContainer.style.padding = "20px";
         }
       } else {
         console.error(err);
@@ -35,7 +38,12 @@ document.getElementById("show-files").addEventListener("click", () => {
 // Mostrar formulario y ocultar la lista
 document.getElementById("create-new").addEventListener("click", () => {
   document.getElementById("Markdown-form").style.display = "block";
-  document.getElementById("box-container").innerHTML = "";
+
+  const boxContainer = document.getElementById("box-container");
+  boxContainer.innerHTML = "";
+  boxContainer.style.border = null;
+  boxContainer.style.padding = null;
+  boxContainer.style.minHeight = null;
 });
 
 // Crear y guardar archivo markdown

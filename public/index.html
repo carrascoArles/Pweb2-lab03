@@ -8,18 +8,20 @@
     <link rel="stylesheet" href="mystyle.css" />
   </head>
   <body>
-    <div id="option-container">
+    <div id="container" class="container">
       <h1>Visualizar y crear archivos Markdown</h1>
 
-      <button id="show-files">Mostrar archivos</button></br>
-      <button id="create-new">Crear Nuevo</button>
-
+      <div class="button-container">
+        <button id="show-files">Mostrar archivos</button></br>
+        <button id="create-new">Crear Nuevo</button>
+      </div>
+      
       <form id="Markdown-form" style="display: none">
         <label for="titulo">Título del documento Markdown:</label><br />
         <input type="text" id="titulo" name="titulo" required placeholder="Escribe aquí el título" /><br />
 
-        <label for="texto">Texto:</label><br />
-        <textarea id="texto" name="texto" rows="10" cols="70" placeholder="Escribe el archivo en Markdown"></textarea><br />
+        <label for="texto">Texto en Markdown:</label><br />
+        <textarea id="texto"  name="texto" rows="10" cols="70" placeholder="Escribe el archivo en Markdown"></textarea><br />
 
         <input type="submit" value="Crear y guardar" />
       </form>
