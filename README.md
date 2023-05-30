@@ -70,7 +70,7 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
 - Si los enlaces proporcionado en esta guía no le son suficientes, puede revisar códigos en Internet que le ayuden con cosas como ejemplos: listar un directorio en NodeJS; pero deberá incluir los enlaces correspondientes en sus archivos como comentarios y sólo podrá usar código de stackoverflow, incluir código de cualquier otra fuente está prohibido y se considerará actitud deshonesta.
     
     **- Resolucion:**
-    **  index.js**
+    **- index.js:**
     ![img](./img/img1.png)
     - En estas líneas se importan las dependencias necesarias, como express, path, fs (sistema de archivos) y markdown-it. Luego se crea una instancia de la aplicación Express y una instancia de markdownIt para convertir los archivos Markdown a HTML.
 
@@ -99,7 +99,7 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
     - Se devuelve una respuesta con estado 404 y el mensaje "No se encontró la Página", si no se encuentra la ruta correcta.
 
 
-    **  main.js**
+    **- main.js:**
     ![img](./img/img10.png)
     - Esta parte del código se encarga de mostrar la lista de archivos cuando se hace clic en un elemento específico. Al hacer clic en el elemento con el ID "show-files", se realiza una petición AJAX de tipo GET a la ruta "/archivos" del servidor. Una vez que se recibe la respuesta, se verifica si el estado de la respuesta es exitoso (código 200) y se obtiene el contenido de la respuesta como un objeto JavaScript mediante JSON.parse(). Luego, se obtiene el contenedor donde se mostrará la lista de archivos y se actualiza su contenido. Se crea un enlace para cada archivo en la respuesta y se le asigna la ruta hacia el archivo específico. Mostrando el nombre de cada archivo .md.
 
