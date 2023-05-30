@@ -100,10 +100,20 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
 
 **III. CONCLUSIONES**
 
+-    Durante la realización del laboratorio, se aprendieron y aplicaron diferentes tecnologías, como NodeJS, que se utiliza en el servidor para manejar las solicitudes y respuestas. Así tambien AJAX en el lado del cliente, lo que nos permitió hacer solicitudes y actualizar la apariencia de la página sin tener que recargarla por completo.
+- Por otro lado mediante la aplicación web, manipulamos archivos Markdown. Desarrollando diversas funcionalidades qu permitieron realizar acciones como listar los archivos Markdown disponibles, visualizar su contenido convertido a HTML y crear nuevos archivos Markdown para guardar en el servidor, mejorando la comprensión del formato Markdown y la habilidad de convertirlo a otros formatos, como HTML.
+-  Finalmente se estableció una comunicación efectiva entre cliente y servidor utilizando JSON para intercambiar datos estructurados como listar archivos y guardar nuevos archivos en el servidor.
 
 
 **RETROALIMENTACIÓN GENERAL**
 
 
 **REFERENCIAS Y BIBLIOGRAFÍA**
+- [https://nodejs.org/en/docs/](https://nodejs.org/en/docs/)
+- [https://expressjs.com/](https://expressjs.com/)
+- [https://expressjs.com/](https://expressjs.com/)
+- [https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [https://daringfireball.net/projects/markdown/](https://daringfireball.net/projects/markdown/)
+- [https://www.sitepoint.com/](https://www.sitepoint.com/)
+#
 
