@@ -95,7 +95,7 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
 
 - Note que la respuesta del servidor está en formato JSON, ¿Habrá alguna forma de verla directamente?
 
-    
+    Si, algunas de ellas sería utilizando un cliente http como postman e insomnia o utilizando la consola en nuestro navegador web
 
 
 **III. CONCLUSIONES**
