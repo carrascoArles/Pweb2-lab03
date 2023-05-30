@@ -87,7 +87,7 @@ La comunicación entre el cliente y el servidor tiene que ser usando JSON sólam
     
 - En los ejercicios. ¿En qué lugar debería estar el archivo poema.txt?
 
-    
+    Debería ubicarse en la carpeta priv.
 
 - ¿Entiende la expresión regular en el código y se da cuenta de para qué es útil?
 
