@@ -1,83 +1,119 @@
-h1{
-    text-align: center; font-size: 400%; font-family: Impact;
-    color: rgba(43, 5, 5, 0.913);
-  }
-  
-  h2 {
-    text-align: center; font-size: 200%; font-family: Impact;
-    color: rgba(31, 3, 3, 0.913);
-  }
-  
-  label {
-    display: block;
-    margin-top: 20px;
-    font-size: 21px;
-  }
-  
-  input[type="text"]
-  {
-    width: 50%;
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 10px;
-  
-  }
-  textarea
-  {
-    width: 50%;
-    padding: 5px;
-    font-size: 14px;
-    border-radius: 10px;
-  
-  }
-  #show-files {
-    display: flex;
-    justify-content:center;
-    text-align: center;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s;
-    font-size: 25px;
-    border-radius:35px;
-  
-  }
-  #create-new {
-    margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #555;
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  overflow-y: scroll;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+  font-size: 48px;
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 2em;
+  font-family: Impact, sans-serif;
+  color: rgba(31, 3, 3, 0.913);
+  margin-bottom: 20px;
+}
+
+/** Estilos Botones **/
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.button-container button {
+  margin-right: 10px;
+  padding: 10px 20px;
   color: #fff;
   border: none;
   cursor: pointer;
-  transition: transform 0.3s;
-  align-items: center;
-  font-size: 25px;
-  border-radius:35px;
-  
-  }
-  input[type="submit"] {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background-color: #555;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: transform 0.3s;
-    align-items: center;
-    font-size: 25px;
-    border-radius:35px;
-  
-  }
-  #file-list {
-    list-style-type: none;
-  }
-  
-  #markdown-content {
-    border: 1px solid #ccc;
-    padding: 10px;
-  }
-  
-  
+  transition: background-color 0.3s;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+.button-container #show-files {
+  background-color: #555;
+}
+
+.button-container #create-new {
+  background-color: #ff5722;
+}
+
+.button-container #create-new:hover {
+  background-color: #e64a19;
+}
+
+.button-container #show-files:hover {
+  background-color: #444;
+}
+
+/** FORMULARIO **/
+
+label {
+  display: block;
+  padding-top: 10px;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  color: #555555;
+}
+
+input[type="text"], textarea {
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #dddddd;
+  font-family: Arial, sans-serif;
+}
+
+input[type="submit"] {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #124c7c;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 5px;
+  float: right;
+}
+
+/** ENLACES **/
+a {
+  display: block;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+a:hover {
+  background-color: #ddd;
+}
+
